@@ -1,0 +1,39 @@
+﻿@page "algo:string"
+@model PS.Presentation.Pages.ProcessManagement.SimulateModel
+@{
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="float-left">Article Category List</h3>
+        <div class="float-right">
+            <a class="btn btn-success" asp-page="/ProcessManagement/Add" asp-area="Administrator">Add New</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Burst Time</th>
+                    <th>Arrival Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var process in Model.model.Processes)
+                {
+                    <tr>
+                        <td>@process.Id</td>
+                        <td>@process.BurstTime</td>
+                        <td>@process.ArrivalTime</td>
+                        <td class="d-flex">
+                            <form method="post" asp-page-handler="Remove" class="float-left mx-2">
+                                <button class="btn btn-danger">Remove</button>
+                                <input type="hidden" name="id" value="@process.Id" />
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

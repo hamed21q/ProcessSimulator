@@ -33,7 +33,7 @@ namespace PS.Domain.Schedulers
                         p.Excute();
                         list.Add(Convert(p));
                         counter++;
-                        if (p.Finished()) { index--; }
+                        if (p.Finished()) { index--; break; }
                     }
                 }
                 if(processList.Count == 0) { break; }

@@ -11,6 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<SchedulerFactory>();
 builder.Services.AddTransient<CPU>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "MyAllowSpecificOrigins",

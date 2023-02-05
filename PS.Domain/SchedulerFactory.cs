@@ -20,6 +20,8 @@ namespace PS.Domain
                     return new Periority();
                 case "MLQ":
                     return new MLQ();
+                case "MLFQ":
+                    return new MLFQ();
                 default: throw new ArgumentException();
             }
         }

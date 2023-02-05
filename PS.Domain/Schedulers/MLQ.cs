@@ -66,6 +66,7 @@ namespace PS.Domain.Schedulers
                         {
                             level.FinishedProcesses++;
                             level.DecrementIndex();
+                            break;
                         }
                     }
                 }

@@ -12,4 +12,10 @@
         public int ArrivalTime { get; set; }
         public int Periority { get; set; } = 1;
     }
+    public class CreateAlgorithmComparisonCommand
+    {
+        public List<CreateProcessCommand> processes { get; set; }
+        public int TimeQuantom { get; set; } = 1;
+
+    }
 }

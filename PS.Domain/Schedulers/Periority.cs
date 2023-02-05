@@ -27,7 +27,7 @@ namespace PS.Domain.Schedulers
         }
         private Process getMostValuable()
         {
-            return processList.MinBy(p => p.Periority);
+            return processList.Where(p => p.ArrivalTime <= counter).MinBy(p => p.Periority);
         }
     }
 }

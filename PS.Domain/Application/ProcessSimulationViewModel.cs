@@ -9,5 +9,8 @@ namespace PS.Domain.Application
     public class ProcessSimulationViewModel
     {
         public List<ProcessViewModel> Processes { get; set; }
+        public double AvrageTurnAroundTime { get; set; }
+        public List<ProcessStatistics> statistics { get; set; }
+
     }
 }

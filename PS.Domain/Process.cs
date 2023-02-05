@@ -9,10 +9,13 @@ namespace PS.Domain
         public int BurstTime { get; set; }
         public int ArrivalTime { get; set; }
         public int Periority { get; set; }
+        public int TurnAroundTime { get; set; }
+        public int WaitingTime { get; set; }
+        public int ResponseTime { get; set; }
         public int remainingTime;
 
         public Notify ProcessCompleted;
-
+        public Notify ProcessStarted;
 
         public Process(long id, int burstTime, int arrivalTime, int periority)
         {
@@ -24,6 +27,10 @@ namespace PS.Domain
         }
         public void Excute()
         {
+            if(remainingTime == BurstTime)
+            {
+                ProcessStarted.Invoke(this);
+            }
             remainingTime--;
             if(remainingTime <= 0 )
             {
